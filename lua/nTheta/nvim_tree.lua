@@ -111,11 +111,14 @@ vim.keymap.set("n", "<C-E>", api.tree.toggle)
 
 vim.keymap.set("n", "<C-o>", function ()
 	vim.ui.input({prompt = "> "}, function (input)
+		if input == nil then
+			return
+		end
 		api.tree.close()
 		open_nvim_tree(input)
 	end)
 end)
 
--- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=#181819 guifg=#9da5b3")
 

@@ -12,7 +12,7 @@ require'nvim-treesitter.configs'.setup {
 		"query",
 		"python",
 		"css",
-		"html"
+		"html",
 	},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -27,3 +27,4 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+

@@ -16,8 +16,8 @@ vim.diagnostic.config({ virtual_text = true })
 
 local cmp = require('cmp')
 
-cmp.setup({
-	completion = {
-		autocomplete = false
-	}
-})
+---cmp.setup({
+	---completion = {
+		--autocomplete = true
+	--}
+--})
