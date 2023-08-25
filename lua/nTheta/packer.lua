@@ -6,15 +6,17 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-	use {
-		'rmehri01/onenord.nvim',
-		as = 'onenord',
-		config = function()
-			require('onenord').setup({
-				custom_colors = { bg = "#202021" }
-			})
-		end
-	}
+	-- use {
+	-- 	'rmehri01/onenord.nvim',
+	-- 	as = 'onenord',
+	-- 	config = function()
+	-- 		require('onenord').setup({
+	-- 			custom_colors = { bg = "#000000" }
+	-- 		})
+	-- 	end
+	-- }
+
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',

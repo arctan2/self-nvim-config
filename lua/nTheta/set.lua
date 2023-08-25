@@ -32,3 +32,5 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
+
+vim.opt.foldopen = vim.opt.foldopen - "block"

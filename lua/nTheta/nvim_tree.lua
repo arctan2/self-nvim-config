@@ -120,5 +120,5 @@ vim.keymap.set("n", "<C-o>", function ()
 end)
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=#181819 guifg=#9da5b3")
+-- vim.cmd(string.format("autocmd Colorscheme * highlight NvimTreeNormal guibg=#181819 guifg=#9da5b3"))
 

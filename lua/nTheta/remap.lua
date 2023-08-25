@@ -1,4 +1,8 @@
--- vim.keymap.set("v", "<S-k>", function() end)
+-- removing these things
+vim.keymap.set("v", "K", function() end)
+vim.keymap.set("n", "<PageDown>", function() end)
+vim.keymap.set("n", "<PageUp>", function() end)
+
 vim.keymap.set("n", "<leader>bp", vim.cmd.bp)
 vim.keymap.set("n", "<leader>bn", vim.cmd.bn)
 
