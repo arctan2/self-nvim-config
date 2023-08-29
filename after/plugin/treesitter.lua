@@ -13,7 +13,6 @@ require'nvim-treesitter.configs'.setup {
 		"python",
 		"css",
 		"html",
-		"lua"
 	},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -25,7 +24,7 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
 }
 

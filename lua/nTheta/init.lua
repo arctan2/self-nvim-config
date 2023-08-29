@@ -1,5 +1,5 @@
-require('nTheta.color_scheme')
 require('nTheta.nvim_tree')
+require('nTheta.color_scheme')
 require('nTheta.set')
 require('nTheta.remap')
 require('nTheta.custom_commands')
