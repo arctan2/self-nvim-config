@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
 	-- use 'navarasu/onedark.nvim'
 	-- use 'Yazeed1s/minimal.nvim'
 	-- use 'Abstract-IDE/Abstract-cs'
+
 	use {
 		"jesseleite/nvim-noirbuddy",
 		requires = { "tjdevries/colorbuddy.nvim", branch = "dev" }

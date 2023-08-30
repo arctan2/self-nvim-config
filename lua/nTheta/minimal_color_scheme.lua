@@ -3,11 +3,14 @@ local Color, colors, Group, _, _ = require('colorbuddy').setup {}
 require("noirbuddy").setup({
 	colors = {
 		background = "#131313",
-		primary = "#19d420",
+		primary = "#19D420",
 		secondary = "#FFFFFF",
-		noir_1 = "#FFFF00",
-		noir_2 = "#ffffff",
+		noir_2 = "#FFFFFF",
 		noir_3 = "#FFFFFF",
+		noir_4 = "#FFFFFF",
+		noir_5 = "#FFFFFF",
+		noir_6 = "#FFFFFF",
+		noir_7 = "#AAAAAA",
 	}
 })
 
@@ -19,22 +22,40 @@ local custom_colors = {
 	NvimTreeFolderName = { fg = folder_color },
 	NvimTreeOpenedFolderName = { fg = folder_color },
 	NvimTreeImageFile = { fg = "#EE4455" },
+	NvimTreeIndentMarker = { fg = "#777777" },
+	NvimTreeNormal = { fg = "#BBBBBB" },
+
 	CursorLine = { bg = "#222222", fg = "#FFFFFF" },
 	MatchParen = { bg = "#131313", fg = "#FF00FF" },
 	PmenuSel = { bg = "#505050", fg = "#FFFFFF" },
 	Pmenu = { bg = "#303030", fg = "#888888" },
 	StatusLine = { bg = "#FFFFFF", fg = "#000000" },
-	StatusLineNC = { bg = "#505050", fg = "#000000" },
+	StatusLineNC = { bg = "#606060", fg = "#000000" },
 	LineNr = { fg = "#505050" },
+	ErrorMsg = { fg = "#ff3b3b", bg = "#131313" },
+	MoreMsg = { fg = "#000000", bg = "#FFFFFF" },
+
 	["@keyword"] = { fg = "#FFFF00" },
-	["@method"] = { fg = "#FFFF00" },
+	["@keyword.return"] = { fg = "#FFFF00" },
+	["@keyword.function"] = { fg = "#FFFF00" },
+	["@type.qualifier"] = { fg = "#FFFF00" },
+	["@constructor"] = { fg = "#FFFF00" },
 	["@repeat"] = { fg = "#FFFF00" },
 	["@conditional"] = { fg = "#FFFF00" },
+	["@include"] = { fg = "#FFFF00" },
+	["@type.builtin"] = { fg = "#AAAAAA" },
+	["@preproc"] = { fg = "#FFFF00" },
+	["@comment"] = { fg = "#d68829" },
+	["@type.css"] = { fg = "#FFFF00" },
+	["@tag"] = { fg = "#AAAAAA" },
 	["@constant"] = { fg = "#0080ff" },
 	["@punctuation"] = { fg = "#0080ff" },
 	["@function.builtin"] = { fg = "#0080ff" },
-	["@include"] = { fg = "#FFFF00" },
+	["@variable.builtin"] = { fg = "#AAAAAA" },
+	["@constant.builtin"] = { fg = "#AAAAAA" },
 }
+
+vim.highlight.priorities.semantic_tokens = 95
 
 for k, v in pairs(custom_colors) do
 	local k_fg = k.."Fg"
