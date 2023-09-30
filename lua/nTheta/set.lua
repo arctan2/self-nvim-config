@@ -34,3 +34,11 @@ vim.opt.termguicolors = true
 vim.g.mapleader = " "
 
 vim.opt.foldopen = vim.opt.foldopen - "block"
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "*",
+	callback = function ()
+		vim.opt.formatoptions:remove("r")
+		vim.opt.formatoptions:remove("o")
+	end
+})

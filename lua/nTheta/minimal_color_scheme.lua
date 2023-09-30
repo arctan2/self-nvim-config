@@ -38,6 +38,7 @@ local custom_colors = {
 	["@keyword"] = { fg = "#FFFF00" },
 	["@keyword.return"] = { fg = "#FFFF00" },
 	["@keyword.function"] = { fg = "#FFFF00" },
+	["@keyword.operator"] = { fg = "#FFFF00" },
 	["@type.qualifier"] = { fg = "#FFFF00" },
 	["@constructor"] = { fg = "#FFFF00" },
 	["@repeat"] = { fg = "#FFFF00" },
