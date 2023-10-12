@@ -1,3 +1,5 @@
+local utils = require("ntheta.utils")
+
 -- removing these things
 vim.keymap.set("v", "K", function() end)
 vim.keymap.set("n", "<PageDown>", function() end)
@@ -5,6 +7,7 @@ vim.keymap.set("n", "<PageUp>", function() end)
 vim.keymap.set("i", "<PageDown>", function() end)
 vim.keymap.set("i", "<PageUp>", function() end)
 
+-- buffer navigation
 vim.keymap.set("n", "<leader>bp", vim.cmd.bp)
 vim.keymap.set("n", "<leader>bn", vim.cmd.bn)
 
@@ -56,3 +59,25 @@ end)
 -- window resize vertical
 vim.keymap.set("n", "<leader><tab>", "<C-w>>")
 vim.keymap.set("n", "<leader><BS>", "<C-w><")
+
+-- moving the visual-line blocks up and down
+vim.keymap.set("v", "<c-k>", function ()
+	local to = vim.fn.getcurpos()[2]
+	local from = vim.fn.getpos("v")[2]
+	local cmd = math.min(from, to)..","..math.max(from, to).."m"..(math.min(from, to) - 2)..";"..tostring(to)
+
+	vim.cmd(cmd)
+
+	utils.visual_select(from - 1, to - 1)
+end)
+
+vim.keymap.set("v", "<c-j>", function ()
+	local from = vim.fn.getpos("v")[2]
+	local to = vim.fn.getcurpos()[2]
+
+	local cmd = math.min(from, to)..","..math.max(from, to).."m"..(math.max(from, to) + 1)..";"..tostring(to)
+
+	vim.cmd(cmd)
+
+	utils.visual_select(from + 1, to + 1)
+end)
