@@ -1,6 +1,6 @@
 local M = {}
 
-io.open("debug.txt", "w"):close()
+-- io.open("debug.txt", "w"):close()
 
 function M.printFile(...)
 	local file = io.open("debug.txt", "a")

@@ -2,11 +2,20 @@ vim.opt.guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff
 
 vim.opt.shell = "powershell"
 
+-- vim.opt.list = true
+-- vim.opt.listchars = "tab:  ┊"
+
+vim.opt.list = true
+vim.opt.listchars = "tab:  ·"
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.cursorlineopt = "number"
+vim.opt.cursorline = true
+
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 vim.opt.smartindent = true
 vim.opt.wrap = false

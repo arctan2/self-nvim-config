@@ -25,13 +25,14 @@ local custom_colors = {
 	NvimTreeIndentMarker = { fg = "#777777" },
 	NvimTreeNormal = { fg = "#BBBBBB" },
 
-	CursorLine = { bg = "#222222", fg = "#FFFFFF" },
+	LineNr = { fg = "#505050" },
+	CursorLine = { bg = "#404040", fg = "#FFFFFF" },
+	CursorLineNr = { fg = "#DDDDDD" },
 	MatchParen = { bg = "#131313", fg = "#FF00FF" },
 	PmenuSel = { bg = "#505050", fg = "#FFFFFF" },
 	Pmenu = { bg = "#303030", fg = "#888888" },
 	StatusLine = { bg = "#FFFFFF", fg = "#000000" },
 	StatusLineNC = { bg = "#606060", fg = "#000000" },
-	LineNr = { fg = "#505050" },
 	ErrorMsg = { fg = "#ff3b3b", bg = "#131313" },
 	MoreMsg = { fg = "#000000", bg = "#FFFFFF" },
 
