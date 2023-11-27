@@ -8,12 +8,12 @@ require'nvim-treesitter.configs'.setup {
 		"typescript",
 		"lua",
 		"vim",
-		"help",
 		"query",
 		"python",
 		"css",
 		"html",
 		"tsx",
+		"vue"
 	},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

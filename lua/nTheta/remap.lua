@@ -1,4 +1,4 @@
-local utils = require("ntheta.utils")
+local utils = require("nTheta.utils")
 
 -- removing these things
 vim.keymap.set("v", "K", function() end)
