@@ -1,6 +1,6 @@
 vim.opt.guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 
-vim.opt.shell = "powershell"
+vim.opt.shell = "zsh"
 
 -- vim.opt.list = true
 -- vim.opt.listchars = "tab:  ┊"

@@ -7,6 +7,8 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
+	use { 'rush-rs/tree-sitter-asm' }
+
 	-- use { "catppuccin/nvim", as = "catppuccin" }
 	-- use {'nyoom-engineering/oxocarbon.nvim'}
 	-- use 'kvrohit/rasmus.nvim'

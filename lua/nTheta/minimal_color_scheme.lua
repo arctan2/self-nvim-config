@@ -28,13 +28,15 @@ local custom_colors = {
 	LineNr = { fg = "#505050" },
 	CursorLine = { bg = "#404040", fg = "#FFFFFF" },
 	CursorLineNr = { fg = "#DDDDDD" },
-	MatchParen = { bg = "#131313", fg = "#FF00FF" },
+	MatchParen = { bg = "#505050", fg = "#FFFF00" },
 	PmenuSel = { bg = "#505050", fg = "#FFFFFF" },
 	Pmenu = { bg = "#303030", fg = "#888888" },
 	StatusLine = { bg = "#FFFFFF", fg = "#000000" },
 	StatusLineNC = { bg = "#606060", fg = "#000000" },
 	ErrorMsg = { fg = "#ff3b3b", bg = "#131313" },
 	MoreMsg = { fg = "#000000", bg = "#FFFFFF" },
+
+	Visual = { bg = "#555555" },
 
 	["@keyword"] = { fg = "#FFFF00" },
 	["@keyword.return"] = { fg = "#FFFF00" },
@@ -55,6 +57,7 @@ local custom_colors = {
 	["@function.builtin"] = { fg = "#0080ff" },
 	["@variable.builtin"] = { fg = "#AAAAAA" },
 	["@constant.builtin"] = { fg = "#AAAAAA" },
+	["@exception"] = { fg = "#FFFF00" },
 }
 
 vim.highlight.priorities.semantic_tokens = 95

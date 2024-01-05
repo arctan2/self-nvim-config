@@ -173,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/admin-u/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tree-sitter-asm"] = {
+    loaded = true,
+    path = "/home/admin-u/.local/share/nvim/site/pack/packer/start/tree-sitter-asm",
+    url = "https://github.com/rush-rs/tree-sitter-asm"
   }
 }
 
