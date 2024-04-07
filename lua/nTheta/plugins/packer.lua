@@ -16,12 +16,13 @@ return require('packer').startup(function(use)
 
 	use {
 		"jesseleite/nvim-noirbuddy",
-		requires = { "tjdevries/colorbuddy.nvim", branch = "dev" }
+		requires = { "tjdevries/colorbuddy.nvim" }
 	}
 
-	use {
-		"stevearc/oil.nvim",
-	}
+	use 'brenoprata10/nvim-highlight-colors'
+
+	use 'stevearc/oil.nvim'
+
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.4',

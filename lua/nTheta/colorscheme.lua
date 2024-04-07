@@ -1,4 +1,7 @@
-local Color, colors, Group, _, _ = require('colorbuddy').setup {}
+local colorbuddy = require('colorbuddy')
+local Color = colorbuddy.Color
+local colors = colorbuddy.colors
+local Group = colorbuddy.Group
 
 require("noirbuddy").setup({
 	colors = {

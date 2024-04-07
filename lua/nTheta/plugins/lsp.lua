@@ -1,6 +1,8 @@
 local cmp = require 'cmp'
 local lspconfig = require('lspconfig')
 
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -9,9 +11,6 @@ cmp.setup({
 	},
 	window = {
 		documentation = cmp.config.window.bordered(),
-	},
-	completion = {
-		autocomplete = false,
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -30,7 +29,25 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+local vue_language_server_path = '/usr/lib/node_modules/@vue/language-server'
+
 lspconfig.tsserver.setup {
+	capabilities = capabilities,
+	init_options = {
+		plugins = {
+			{
+				name = '@vue/typescript-plugin',
+				location = vue_language_server_path,
+				languages = { 'vue' },
+			},
+		},
+	},
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
+
+lspconfig.volar.setup {}
+
+lspconfig.html.setup {
 	capabilities = capabilities
 }
 
@@ -50,6 +67,10 @@ lspconfig.lua_ls.setup({
 		}
 	}
 })
+
+lspconfig.pyright.setup {
+	capabilities = capabilities
+}
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -98,7 +119,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 		vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		vim.keymap.set('n', '<leader>f', function()
+		vim.keymap.set('n', '<leader>fo', function()
 			vim.lsp.buf.format { async = true }
 		end, opts)
 	end,

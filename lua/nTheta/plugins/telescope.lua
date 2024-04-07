@@ -26,15 +26,15 @@ vim.keymap.set('n', '<leader>fb', function()
 	builtin.buffers({ sort_mru = true })
 end, {})
 
-vim.keymap.set('n', '<leader>ma', builtin.marks, {})
-
-vim.keymap.set('n', '<leader>ml', function()
-	builtin.marks({ mark_type = "local" })
-end, {})
-
-vim.keymap.set('n', '<leader>mg', function()
-	builtin.marks({ mark_type = "global" })
-end, {})
+-- vim.keymap.set('n', '<leader>ma', builtin.marks, {})
+-- 
+-- vim.keymap.set('n', '<leader>ml', function()
+-- 	builtin.marks({ mark_type = "local" })
+-- end, {})
+-- 
+-- vim.keymap.set('n', '<leader>mg', function()
+-- 	builtin.marks({ mark_type = "global" })
+-- end, {})
 
 vim.keymap.set('n', '<leader>qf', function ()
 	vim.diagnostic.setqflist({
