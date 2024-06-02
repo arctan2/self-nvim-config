@@ -1,5 +1,12 @@
 vim.opt.guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+	pattern = "*",
+	callback = function ()
+	vim.opt.guicursor = "a:block-blinkon0"
+	end
+})
+
 vim.opt.shell = "zsh"
 
 -- vim.opt.list = true

@@ -51,6 +51,12 @@ lspconfig.html.setup {
 	capabilities = capabilities
 }
 
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.cssls.setup {
+  capabilities = capabilities,
+}
+
 lspconfig.rust_analyzer.setup {
 	capabilities = capabilities
 }

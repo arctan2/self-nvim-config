@@ -36,7 +36,7 @@ end, {})
 -- 	builtin.marks({ mark_type = "global" })
 -- end, {})
 
-vim.keymap.set('n', '<leader>qf', function ()
+vim.keymap.set('n', '<leader>qfe', function ()
 	vim.diagnostic.setqflist({
 		open = false,
 		title = "Errors",
@@ -50,11 +50,24 @@ vim.keymap.set('n', '<leader>qf', function ()
 	})
 end)
 
-vim.keymap.set('n', '<leader>qw', function ()
+vim.keymap.set('n', '<leader>qfw', function ()
 	vim.diagnostic.setqflist({
 		open = false,
 		title = "Warnings",
 		severity = vim.diagnostic.severity.WARN
+	})
+
+	builtin.quickfix({
+		trim_text = true,
+		show_line = true,
+		nr = 0
+	})
+end)
+
+vim.keymap.set('n', '<leader>qfa', function ()
+	vim.diagnostic.setqflist({
+		open = false,
+		title = "All",
 	})
 
 	builtin.quickfix({

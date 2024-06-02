@@ -7,13 +7,13 @@ require('nvim-treesitter.configs').setup {
 		"typescript",
 		"lua",
 		"vim",
-		"query",
+		"vimdoc",
 		"python",
 		"css",
 		"html",
 		"tsx",
+		"query",
 		"vue",
-		"asm"
 	},
 
 	sync_install = false,
