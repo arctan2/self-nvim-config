@@ -61,6 +61,10 @@ lspconfig.rust_analyzer.setup {
 	capabilities = capabilities
 }
 
+lspconfig.zls.setup{
+	capabilities = capabilities,
+}
+
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	settings = {
@@ -75,7 +79,12 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.pyright.setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+	settings = {
+		python = {
+			pythonPath = vim.fn.exepath("python3.10"),
+		},
+	},
 }
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)

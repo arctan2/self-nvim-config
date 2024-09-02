@@ -71,6 +71,8 @@ vim.keymap.set("v", "<c-k>", function ()
 	utils.visual_select(from - 1, to - 1)
 end)
 
+vim.keymap.set("v", "<c-y>", "\"+y")
+
 vim.keymap.set("v", "<c-j>", function ()
 	local from = vim.fn.getpos("v")[2]
 	local to = vim.fn.getcurpos()[2]
