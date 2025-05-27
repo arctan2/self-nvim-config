@@ -1,0 +1,5 @@
+require("arctan2.plugins.telescope")
+require("arctan2.plugins.treesitter")
+require("arctan2.plugins.oil")
+require("arctan2.plugins.lsp")
+require("arctan2.plugins.nvim_highlight_colors")

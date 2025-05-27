@@ -50,6 +50,12 @@ vim.keymap.set('n', '<leader>qfe', function ()
 	})
 end)
 
+vim.keymap.set('n', '<leader>nc', function ()
+	builtin.find_files{
+		cwd = vim.fn.stdpath("config")
+	}
+end)
+
 vim.keymap.set('n', '<leader>qfw', function ()
 	vim.diagnostic.setqflist({
 		open = false,

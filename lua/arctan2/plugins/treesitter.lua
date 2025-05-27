@@ -14,6 +14,7 @@ require('nvim-treesitter.configs').setup {
 		"tsx",
 		"query",
 		"vue",
+		"c_sharp"
 	},
 
 	sync_install = false,

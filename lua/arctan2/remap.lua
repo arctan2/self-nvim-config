@@ -1,4 +1,4 @@
-local utils = require("nTheta.utils")
+local utils = require("arctan2.utils")
 
 -- removing these things
 vim.keymap.set("v", "K", function() end)
@@ -46,15 +46,6 @@ vim.keymap.set("t", "<C-H>", t_normal.."<C-w>W")
 -- window resize horizontal
 vim.keymap.set("n", "<leader>+", "<C-w>+")
 vim.keymap.set("n", "<leader>-", "<C-w>-")
-
-vim.keymap.set("n", "<C-s>", function()
-	local height = vim.fn.winheight(0)
-	if height == 1 then
-		vim.cmd.resize(100)
-	else
-		vim.cmd.resize(1)
-	end
-end)
 
 -- window resize vertical
 vim.keymap.set("n", "<leader><tab>", "<C-w>>")

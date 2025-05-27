@@ -1,5 +1,0 @@
-require("nTheta.plugins.treesitter")
-require("nTheta.plugins.telescope")
-require("nTheta.plugins.oil")
-require("nTheta.plugins.lsp")
-require("nTheta.plugins.nvim_highlight_colors")

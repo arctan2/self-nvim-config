@@ -1,5 +1,4 @@
 local cmp = require 'cmp'
-local lspconfig = require('lspconfig')
 
 require('lspconfig.ui.windows').default_options.border = 'rounded'
 
@@ -31,41 +30,56 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local vue_language_server_path = '/usr/lib/node_modules/@vue/language-server'
 
-lspconfig.tsserver.setup {
-	capabilities = capabilities,
+vim.lsp.config('ts_ls', {
 	init_options = {
 		plugins = {
 			{
-				name = '@vue/typescript-plugin',
-				location = vue_language_server_path,
-				languages = { 'vue' },
+				name = "@vue/typescript-plugin",
+				location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+				languages = {"javascript", "typescript", "vue"},
 			},
 		},
 	},
-	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-}
+	filetypes = {
+		"javascript",
+		"typescript",
+	},
+})
 
-lspconfig.volar.setup {}
+vim.lsp.config("vue_ls", {
+	filetypes = { 'vue', 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' },
+	init_options = {
+		vue = { hybridMode = false }
+	}
+})
 
-lspconfig.html.setup {
+vim.lsp.config("html", {
 	capabilities = capabilities
-}
+})
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.cssls.setup {
+vim.lsp.config("cssls", {
   capabilities = capabilities,
-}
+})
 
-lspconfig.rust_analyzer.setup {
+vim.lsp.config("rust_analyzer", {
 	capabilities = capabilities
-}
+})
 
-lspconfig.zls.setup{
+vim.lsp.config("zls", {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("gopls", {
+	capabilities = capabilities,
+})
+
+vim.lsp.config("hls", {
+	capabilities = capabilities
+})
+
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -78,14 +92,14 @@ lspconfig.lua_ls.setup({
 	}
 })
 
-lspconfig.pyright.setup {
+vim.lsp.config("pyright", {
 	capabilities = capabilities,
 	settings = {
 		python = {
 			pythonPath = vim.fn.exepath("python3.10"),
 		},
 	},
-}
+})
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -94,11 +108,14 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 vim.keymap.set('i', '<c-e>', cmp.complete)
 
-vim.diagnostic.config {
-	float = { border = "rounded" },
+local _border = "rounded"
+
+vim.diagnostic.config{
+	float = { border = _border},
+	virtual_text = true
 }
 
-local _border = "rounded"
+vim.opt.updatetime = 100
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 vim.lsp.handlers.hover, {
@@ -109,10 +126,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 vim.lsp.handlers.signature_help, {
 	border = _border
 })
-
-vim.diagnostic.config{
-	float = { border = _border}
-}
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -139,3 +152,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end, opts)
 	end,
 })
+
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("gopls")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
+vim.lsp.enable("vue_ls")
