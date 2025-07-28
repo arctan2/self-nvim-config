@@ -45,8 +45,8 @@ vim.g.netrw_keepdir = true
 
 vim.g.netrw_winsize = 30
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
@@ -54,6 +54,8 @@ vim.g.mapleader = " "
 vim.g.zig_fmt_autosave = false
 
 vim.opt.foldopen = vim.opt.foldopen - "block"
+
+vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "*",
