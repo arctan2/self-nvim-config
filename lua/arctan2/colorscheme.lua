@@ -39,6 +39,8 @@ local custom_colors = {
 	ErrorMsg = { fg = "#ff3b3b", bg = "#131313" },
 	MoreMsg = { fg = "#000000", bg = "#FFFFFF" },
 
+	Substitute = { fg = "#333333", bg = "#a379f7" },
+
 	Visual = { bg = "#555555" },
 
 	["@keyword"] = { fg = "#FFFF00" },
@@ -63,7 +65,7 @@ local custom_colors = {
 	["@exception"] = { fg = "#FFFF00" },
 }
 
-vim.highlight.priorities.semantic_tokens = 95
+vim.hl.priorities.semantic_tokens = 95
 
 for k, v in pairs(custom_colors) do
 	local k_fg = k.."Fg"

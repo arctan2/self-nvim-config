@@ -1,6 +1,7 @@
 local cmp = require 'cmp'
 
 require('lspconfig.ui.windows').default_options.border = 'rounded'
+vim.o.winborder = 'rounded'
 
 cmp.setup({
 	snippet = {
@@ -28,8 +29,6 @@ cmp.setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local vue_language_server_path = '/usr/lib/node_modules/@vue/language-server'
-
 vim.lsp.config('ts_ls', {
 	init_options = {
 		plugins = {
@@ -43,11 +42,12 @@ vim.lsp.config('ts_ls', {
 	filetypes = {
 		"javascript",
 		"typescript",
+		"typescriptreact"
 	},
 })
 
 vim.lsp.config("vue_ls", {
-	filetypes = { 'vue', 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' },
+	filetypes = { 'vue', 'typescript', 'javascript' },
 	init_options = {
 		vue = { hybridMode = false }
 	}
@@ -60,6 +60,10 @@ vim.lsp.config("html", {
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.lsp.config("cssls", {
+  capabilities = capabilities,
+})
+
+vim.lsp.config("clangd", {
   capabilities = capabilities,
 })
 
@@ -94,11 +98,6 @@ vim.lsp.config("lua_ls", {
 
 vim.lsp.config("pyright", {
 	capabilities = capabilities,
-	settings = {
-		python = {
-			pythonPath = vim.fn.exepath("python3.10"),
-		},
-	},
 })
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
@@ -159,3 +158,6 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("vue_ls")
+vim.lsp.enable("pyright")
+vim.lsp.enable("zls")
+vim.lsp.enable("clangd")

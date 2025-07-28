@@ -7,49 +7,9 @@ vim.keymap.set("n", "<PageUp>", function() end)
 vim.keymap.set("i", "<PageDown>", function() end)
 vim.keymap.set("i", "<PageUp>", function() end)
 
--- buffer navigation
-vim.keymap.set("n", "<leader>bp", vim.cmd.bp)
-vim.keymap.set("n", "<leader>bn", vim.cmd.bn)
-
-vim.keymap.set("n", "<C-w>n", vim.cmd.new)
-vim.keymap.set("n", "<C-w>v", vim.cmd.vnew)
-
--- open new split terminal
-vim.keymap.set("n", "<leader>tv", ":vnew | terminal<CR>")
-vim.keymap.set("n", "<leader>th", ":new | terminal<CR>")
-
--- window navigation
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-
 -- cycle windows
 vim.keymap.set("n", "<C-L>", "<C-w>w")
 vim.keymap.set("n", "<C-H>", "<C-w>W")
-
--- terminal mapping
-local t_normal = "<C-\\><C-n>"
-
-vim.keymap.set("t", "<C-n>", t_normal)
-vim.keymap.set("t", "<C-t>", t_normal..":wincmd p<CR>")
-
--- terminal mode window navigation
-vim.keymap.set("t", "<C-l>", t_normal.."<C-w>l")
-vim.keymap.set("t", "<C-h>", t_normal.."<C-w>h")
-vim.keymap.set("t", "<C-j>", t_normal.."<C-w>j")
-vim.keymap.set("t", "<C-k>", t_normal.."<C-w>k")
-
-vim.keymap.set("t", "<C-L>", t_normal.."<C-w>w")
-vim.keymap.set("t", "<C-H>", t_normal.."<C-w>W")
-
--- window resize horizontal
-vim.keymap.set("n", "<leader>+", "<C-w>+")
-vim.keymap.set("n", "<leader>-", "<C-w>-")
-
--- window resize vertical
-vim.keymap.set("n", "<leader><tab>", "<C-w>>")
-vim.keymap.set("n", "<leader><BS>", "<C-w><")
 
 -- moving the visual-line blocks up and down
 vim.keymap.set("v", "<c-k>", function ()
@@ -73,4 +33,15 @@ vim.keymap.set("v", "<c-j>", function ()
 	vim.cmd(cmd)
 
 	utils.visual_select(from + 1, to + 1)
+end)
+
+-- camel case to snake case toggler
+vim.keymap.set("n", "<leader>cs", function ()
+	vim.api.nvim_feedkeys("vw:s/\\([A-Z]\\)/_\\L\\1/g", 'n', true)
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), 'n', true)
+end)
+
+vim.keymap.set("n", "<leader>sc", function ()
+	vim.api.nvim_feedkeys("vw:s/_\\(.\\)/\\U\\1/g", 'n', true)
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), 'n', true)
 end)
